@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Titles */
+
+.title {
+  @apply text-primary font-bold text-[min(calc(16pt+3vw),35pt)] tracking-wide;
+  text-shadow: 0 0 8px #6170dd;
+}
+
+.stitle {
+  @apply text-secondary font-semibold text-[min(calc(12pt+2vw),25pt)];
+  text-shadow: 0 0 8px #dd61a3;
+}
+
+/* Navbar */
+
+.so {
+  @apply fixed left-1 sm:-left-60 top-[calc(50%-30vh/2)] hover:opacity-0 h-[30vh] w-1 z-50 transition-all duration-300 bg-primary rounded-sm;
+}
+
+.so:hover ~ .navbar {
+  @apply left-2;
+}
+
+.navbar {
+  @apply fixed -left-20 sm:left-4 top-[calc(50%-2.5rem*3/2-0.75rem*2/2)] sm:top-[calc(50%-3.5rem*3/2-1rem*2/2)] flex flex-col gap-3 sm:gap-4 z-50 transition-all duration-300;
+}
+
+.navbar a {
+  @apply h-10 w-10 text-xl sm:h-14 sm:w-14 sm:text-[1.8rem] shadow-[0_0_5px_1px] shadow-primary p-2 bg-primary flex items-center justify-center rounded-lg;
+}
+
+.navbar a i {
+  @apply transition-all duration-300;
+}
+
+.navbar a:hover i {
+  @apply sm:scale-110;
+}
+
+/* Section 1 */
+
+.link {
+  @apply relative overflow-hidden text-[var(--icon-color)] transition-[height,width] text-2xl flex justify-center items-center h-[40px] w-[40px] z-[1] hover:after:h-[42px] hover:after:w-[42px];
+}
+
+.link:hover i {
+  transform: scale(1.105);
+  text-shadow: 0px 0px 10px var(--icon-color);
+}
+
+.link::before {
+  content: "";
+  @apply absolute -z-[2] w-[40px] h-[40px] top-0 left-0 bg-[var(--icon-color)];
+}
+
+.link::after {
+  content: "";
+  @apply absolute bg-vdarkblue -z-[1] rotate-45 w-[50px] h-[50px] transition-[height,width];
+}
+
+.mark-primary {
+  @apply text-primary shadow-primary;
+  text-shadow: 1px 0px 2px var(--tw-shadow-color);
+}
+
+.mark-secondary {
+  @apply text-secondary shadow-secondary;
+  text-shadow: 1px 0px 2px var(--tw-shadow-color);
+}
+
+/* Section 2 */
+
+.skills {
+  @apply px-4 flex flex-col flex-nowrap items-center gap-3;
+}
+
+.skills .skill {
+  @apply relative w-full max-w-sm min-w-[20rem] z-10 rounded-lg overflow-hidden shadow-primary shadow-[0_0_12px_-3px];
+}
+
+.skills .skill span {
+  @apply absolute top-0 right-0 p-2 font-medium tracking-wide;
+}
+
+.skills .skill p {
+  @apply relative w-full p-2 border-b-primary border-b font-medium tracking-wide;
+  --tw-border-opacity: 0.5;
+}
+
+.skills .skill p::before {
+  content: "";
+  @apply absolute top-0 left-0 -z-10 w-full h-full bg-primary opacity-50 brightness-50;
+}
+
+.skills .skill .percentbar {
+  @apply relative w-[calc(100%-0.5rem*2)] h-5 mx-2 my-4 rounded-md;
+}
+
+.skills .skill .percentbar::before {
+  content: "";
+  @apply absolute top-0 left-0 -z-10 w-full h-full bg-primary opacity-50 brightness-50 rounded-md;
+}
+
+.skills .skill .percentbar::after {
+  content: "";
+  @apply absolute top-0 left-0 w-[var(--percent)] h-full rounded-md bg-primary opacity-80 shadow-primary shadow-[0_0_5px_0];
+}
+
+.skills .skill::before {
+  content: "";
+  @apply absolute top-0 left-0 -z-10 w-full h-full bg-primary opacity-50 backdrop-blur-xl;
+}
+
+/* Section 3 */
+
+.certificates {
+  @apply px-4 w-full flex flex-row flex-wrap justify-center items-center gap-5;
+}
+
+.certificates .certificate {
+  @apply relative w-full max-w-sm min-w-[20rem] z-10 rounded-lg overflow-hidden shadow-primary shadow-[0_0_12px_-3px] cursor-pointer transition-[transform] hover:scale-[1.02];
+}
+
+.certificates .certificate p {
+  @apply relative w-full p-2 border-b-primary border-b font-medium tracking-wide;
+  --tw-border-opacity: 0.5;
+}
+
+.certificates .certificate p::before {
+  content: "";
+  @apply absolute top-0 left-0 -z-10 w-full h-full bg-primary opacity-50 brightness-75;
+}
+
+.certificates .certificate .img {
+  background-image: var(--imageURL);
+  @apply h-56 w-full bg-contain bg-no-repeat bg-center bg-white;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  @apply bg-vdarkblue w-[5px];
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff2d75;
+  background: linear-gradient(#5362f1, #ff2d75);
+  border-radius: 5px;
+}
