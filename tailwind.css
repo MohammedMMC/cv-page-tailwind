@@ -41,6 +41,12 @@
   @apply sm:scale-110;
 }
 
+/* Footer */
+
+footer .waves div {
+  @apply absolute top-[-100px] left-0 w-full h-full bg-[length:1000px_100px] bg-[url('/images/wave.png')] z-[1000];
+}
+
 /* Section 1 */
 
 .link {
